@@ -28,13 +28,15 @@ public class City{
     public City(){}
 
     public City (String city) throws IOException {
+        setCityName(city);
+        setMediaWiki(city);
         setMuseums(city);
+        setBars(city);
+        setCafes(city);
+        setRestaurants(city);
         setLat(city);
         setLon(city);
         setWeather(city);
-        setMediaWiki(city);
-        setCityName(city);
-
     }
 
     public String getCityName() {
@@ -67,7 +69,7 @@ public class City{
 
     public void setCafes(String city) throws IOException {
         String WikiContent = mediaWiki(city);
-        this.museums= countCriterionfCity(WikiContent,"cafes");;
+        this.cafes= countCriterionfCity(WikiContent,"cafe");;
     }
     public int getRestaurants() {
         return restaurants;
@@ -75,7 +77,7 @@ public class City{
 
     public void setRestaurants(String city) throws IOException {
         String WikiContent = mediaWiki(city);
-        this.museums= countCriterionfCity(WikiContent,"restaurants");;
+        this.restaurants= countCriterionfCity(WikiContent,"restaurants");;
     }
 
     public int getBars() {
@@ -84,7 +86,7 @@ public class City{
 
     public void setBars(String city) throws IOException {
         String WikiContent = mediaWiki(city);
-        this.museums= countCriterionfCity(WikiContent,"bars");;
+        this.bars= countCriterionfCity(WikiContent,"bars");;
     }
 
     public double getLat(){
@@ -141,6 +143,7 @@ public class City{
             cityArticle = cityArticle.substring(index + 1);
             index = cityArticle.indexOf(criterion);
         }
+        System.out.println(count);
         return count;
     }
 
