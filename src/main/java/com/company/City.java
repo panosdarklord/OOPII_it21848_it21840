@@ -14,8 +14,18 @@ public class City{
     private String weather;
     private String mediaWiki;
     private String cityName;
+    private int worldCount;
 
-    public City(int museums,int cafes, int restaurants,int bars,double lat,double lon,String weather,String mediaWiki){
+    public int getWorldCount() {
+        return worldCount;
+    }
+
+    public void setWorldCount() {
+        String[] s =mediaWiki.split(" ");
+        this.worldCount = s.length;;
+    }
+
+    public City(int museums, int cafes, int restaurants, int bars, double lat, double lon, String weather, String mediaWiki){
     	this.museums=museums;
     	this.cafes = cafes;
         this.restaurants = restaurants;
@@ -37,6 +47,19 @@ public class City{
         setLat(city);
         setLon(city);
         setWeather(city);
+        setWorldCount();
+    }
+
+    public City (String cityName, int museums,int cafes, int restaurants,int bars,double lat,double lon,String weather,int worldCount){
+        this.cityName = cityName;
+        this.museums=museums;
+        this.cafes = cafes;
+        this.restaurants = restaurants;
+        this.bars=bars;
+        this.lat=lat;
+        this.lon=lon;
+        this.weather=weather;
+        this.worldCount = worldCount;
     }
 
     public String getCityName() {
@@ -143,7 +166,6 @@ public class City{
             cityArticle = cityArticle.substring(index + 1);
             index = cityArticle.indexOf(criterion);
         }
-        System.out.println(count);
         return count;
     }
 

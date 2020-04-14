@@ -13,7 +13,7 @@ public class Tourist extends Traveller{
     public int Similarity(City a){
 
         int similarity = 0,m = 0,c = 0,r = 0,b = 0;
-        int words = countTotalWords(a.getMediaWiki());
+        int words = a.getWorldCount();
 
         if (a.getCafes() > 0 && getCafes() > 0){
             similarity += 1;
