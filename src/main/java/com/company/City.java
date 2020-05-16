@@ -5,6 +5,10 @@ import org.jsoup.Jsoup;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class City{
@@ -169,7 +173,60 @@ public class City{
         return count;
     }
 
+    public static HashMap loadingCitesFromDB(Connection db_con_obj) throws SQLException {
+        ResultSet rs;
+        PreparedStatement db_prep_obj;
+        try {
+            db_prep_obj = db_con_obj.prepareStatement("CREATE TABLE cities(cityName varchar(50) unique," +
+                    "cafes int," +
+                    "museums int," +
+                    "restaurants int," +
+                    "bars int," +
+                    "lat BINARY_DOUBLE," +
+                    "lon BINARY_DOUBLE," +
+                    "weather varchar(30)," +
+                    "wordCount int)");
+            db_prep_obj.executeQuery();
+        }catch (SQLSyntaxErrorException e) {
+            System.out.println("Table is already made or name is taken");
+        }
+        db_prep_obj = db_con_obj.prepareStatement("select * from cities");
+        rs = db_prep_obj.executeQuery();
 
+        HashMap<String,City> cityHash = new HashMap<String,City>();
+        while (rs.next()){
+            String cityName = rs.getString("cityName");
+            int museums = rs.getInt("museums");
+            int cafes = rs.getInt("cafes");
+            int restaurants = rs.getInt("restaurants");
+            int bars = rs.getInt("bars");
+            double lat = rs.getDouble("lat");
+            double lon = rs.getFloat("lon");
+            String weather = rs.getString("weather");
+            int wordCount = rs.getInt("wordCount");
+            cityHash.put(cityName,new City(cityName, museums, cafes, restaurants, bars, lat, lon, weather, wordCount));
+        }
+        return  cityHash;
+    }
+
+
+
+    public static void loadingCitiesToDB(HashMap cityHash,Connection db_con_obj){
+        PreparedStatement db_prep_obj;
+
+
+        Iterator<Map.Entry<String,City>> it = cityHash.entrySet().iterator();
+        while (it.hasNext()) {
+            City value = (City) it.next().getValue();
+            try {
+                db_prep_obj = db_con_obj.prepareStatement("insert into cities(cityName, cafes, museums, restaurants, bars, lat, lon, weather, wordCount)" +
+                        "values('"+ value.getCityName() + "','" + value.getCafes() + "','" + value.getMuseums() + "','" + value.getRestaurants() + "','" +
+                        value.getBars() + "','" + value.getLat() + "','" + value.getLon() + "','" + value.getWeather() + "','" + value.getWorldCount() + "')");
+                db_prep_obj.executeQuery();
+            } catch (Exception e) {  //αν η πολη υπαρχει στην βαση τοτε πεταει exception δεν χριαζεται να διχνει κατι στον χρηστη
+            }
+        }
+    }
 
     private JSONObject openWeather (String city) throws IOException {
 

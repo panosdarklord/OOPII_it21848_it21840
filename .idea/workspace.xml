@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b6962a6-84a4-446d-9e9d-0287976cb871" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOPII_it21848_it21840.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOPII_it21848_it21840.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Traveller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Traveller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Business.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Business.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/City.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Tourist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Traveller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Traveller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/traveler.dat" beforeDir="false" afterPath="$PROJECT_DIR$/traveler.dat" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZiMDycOnpSChRc4wdkFq20dZtP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ojdbc6.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="OOPII_it21848_it21840" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b6962a6-84a4-446d-9e9d-0287976cb871" name="Default Changelist" comment="" />
+      <created>1585317345662</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585317345662</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="293" y="205" width="1024" height="815" key="#Project_Structure" timestamp="1589207792474">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="293" y="205" width="1024" height="815" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1589207792474" />
+    <state x="1386" y="269" width="524" height="454" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1589375623213">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1386" y="269" width="524" height="454" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1589375623213" />
+    <state x="480" y="357" width="954" height="361" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586256732215">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="480" y="357" width="954" height="361" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1586256732215" />
+    <state x="743" y="212" width="423" height="596" key="#com.intellij.ide.util.MemberChooser" timestamp="1589541537824">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="743" y="212" width="423" height="596" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1589541537824" />
+    <state x="528" y="185" width="858" height="685" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1585317634517">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="528" y="185" width="858" height="685" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1585317634517" />
+    <state x="693" y="273" width="524" height="473" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1586004219542">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="693" y="273" width="524" height="473" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1586004219542" />
+    <state x="595" y="423" width="714" height="458" key="DetectedRootsChooserDialog" timestamp="1586449733037">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="595" y="423" width="714" height="458" key="DetectedRootsChooserDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1586449733037" />
+    <state x="393" y="266" width="1114" height="484" key="FileChooserDialogImpl" timestamp="1586451974588">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="393" y="266" width="1114" height="484" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1586451974588" />
+    <state width="1872" height="320" key="GridCell.Tab.0.bottom" timestamp="1589624791717">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="320" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1589624791717" />
+    <state width="1872" height="320" key="GridCell.Tab.0.center" timestamp="1589624791717">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="320" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1589624791717" />
+    <state width="1872" height="320" key="GridCell.Tab.0.left" timestamp="1589624791716">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="320" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1589624791716" />
+    <state width="1872" height="320" key="GridCell.Tab.0.right" timestamp="1589624791717">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="320" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1589624791717" />
+    <state width="1872" height="353" key="GridCell.Tab.1.bottom" timestamp="1586797491187">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="353" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1586797491187" />
+    <state width="1872" height="353" key="GridCell.Tab.1.center" timestamp="1586797491186">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="353" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1586797491186" />
+    <state width="1872" height="353" key="GridCell.Tab.1.left" timestamp="1586797491186">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="353" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1586797491186" />
+    <state width="1872" height="353" key="GridCell.Tab.1.right" timestamp="1586797491187">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1872" height="353" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1586797491187" />
+    <state x="443" y="116" width="1024" height="815" key="SettingsEditor" timestamp="1586451979760">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="443" y="116" width="1024" height="815" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1586451979760" />
+    <state x="534" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1586254451204">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="534" y="352" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1586254451204" />
+    <state x="558" y="193" width="794" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589622709529">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="558" y="193" width="794" height="634" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1589622709529" />
+    <state x="23" y="115" width="1891" height="822" key="new project wizard" timestamp="1585317454688">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="23" y="115" width="1891" height="822" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1585317454688" />
+  </component>
+</project>

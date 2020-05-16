@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.*;
 import java.util.*;
 public class Traveller implements java.io.Serializable, Comparable<Traveller> {
     private   String name;
@@ -87,6 +88,39 @@ public class Traveller implements java.io.Serializable, Comparable<Traveller> {
     public void setCounter(int counter) {
         Traveller.counter = counter;
     }
+
+
+    public static LinkedList loadingTravellersFromFiles(){
+
+        LinkedList<Traveller> traveller= new LinkedList<Traveller>();
+        ObjectInputStream dpg7001;
+        try{
+            dpg7001=new ObjectInputStream(new FileInputStream("traveler.dat"));
+            Scanner input=new Scanner("traveler.dat");
+            while(input.hasNextLine()){
+                traveller.add((Traveller) dpg7001.readObject());
+            }
+        }catch(Exception l){
+        }
+
+
+        return traveller;
+    }
+
+public static void writeTravellerToFile(LinkedList<Traveller> traveller){
+    ListIterator itr = traveller.listIterator();
+    try{
+        FileOutputStream out=new FileOutputStream(new File("traveler.dat"));
+        ObjectOutputStream dpg7000=new ObjectOutputStream(out);
+        while(itr.hasNext()){
+            Object element = itr.next();
+            dpg7000.writeObject(element);
+        }
+        dpg7000.close();
+    }catch(Exception c){
+        System.out.println("error handling file");
+    }
+}
 
 
     public int Similarity(City a) {
