@@ -76,7 +76,7 @@ public class Main {
 
         PrintStream original = System.out;
         ui.mainGUI();
-        while (!ui.closed) {
+        while (!ui.isClosed()) {
 
 
            System.setOut(new PrintStream(new OutputStream() {
@@ -86,7 +86,7 @@ public class Main {
            }));
 
            boolean cityExists = true;
-           while (!ui.closed) {
+           while (!ui.isClosed()) {
 
 
                System.out.println(ui.isPressed());

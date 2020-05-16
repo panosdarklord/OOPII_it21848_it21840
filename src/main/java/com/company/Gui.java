@@ -6,12 +6,12 @@ import java.awt.event.*;
 import java.awt.event.ActionListener;
 
 public class Gui extends JFrame{
-    JTextField tName,tAge,tCities,tMuseums,tCafes,tRestaurants,tBars;
-    JButton b;
-    DefaultListModel<String> category= new DefaultListModel<>();
-    JList<String> tCategory=new JList<>();
-    DefaultListModel<String> tt10= new DefaultListModel<>();
-    JList <String> tWeather=new JList<>();
+    private JTextField tName,tAge,tCities,tMuseums,tCafes,tRestaurants,tBars;
+    private JButton b;
+    private DefaultListModel<String> category= new DefaultListModel<>();
+    private JList<String> tCategory=new JList<>();
+    private DefaultListModel<String> tt10= new DefaultListModel<>();
+    private JList <String> tWeather=new JList<>();
 
 
     public boolean pressed = false;
@@ -27,8 +27,12 @@ public class Gui extends JFrame{
     private int restaurants;
     private int bars;
     private String weather;
-    public boolean closed = false;
+    private boolean closed = false;
 
+
+    public boolean isClosed() {
+        return closed;
+    }
 
     public String getChoice() {
         return choice;
@@ -78,7 +82,7 @@ public class Gui extends JFrame{
 
 
 
-    JPanel mainPanel;
+    private JPanel mainPanel;
 
     public void mainGUI(){
 
@@ -114,7 +118,7 @@ public class Gui extends JFrame{
 
 
 
-    public void ioInit(){
+    private void ioInit(){
 
 
 
