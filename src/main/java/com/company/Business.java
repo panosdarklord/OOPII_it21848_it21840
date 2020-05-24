@@ -6,7 +6,7 @@ public class Business extends Traveller{
 	double lat;
 	double lon;
 
-    public Business(String name,int age,String city,int museums,int cafes,int restaurants, int bars) throws IOException {
+    public Business(String name,int age,String city,int museums,int cafes,int restaurants, int bars) throws CityNotFoundException{
   	    super(name,age,museums,cafes,restaurants,bars);
 
   	    City curCity = new City(city);
@@ -21,7 +21,7 @@ public class Business extends Traveller{
 		return lat;
 	}
 
-	public void setLat(String city) throws IOException {
+	public void setLat(String city) throws CityNotFoundException {
     	City curCity =new City(city);
 		this.lat = curCity.getLat();
 	}
@@ -30,7 +30,7 @@ public class Business extends Traveller{
 		return lon;
 	}
 
-	public void setLon(String city) throws IOException {
+	public void setLon(String city) throws CityNotFoundException{
     	City curCity = new City(city);
 		this.lon = curCity.getLon();
 	}

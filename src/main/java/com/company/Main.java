@@ -19,26 +19,35 @@ public class Main {
 
             db_con_obj = DriverManager.getConnection("jdbc:oracle:thin:@oracle12c.hua.gr:1521:orcl","it21840","it21840");
             if (db_con_obj != null) {
-                System.out.println("Connection Successful! Enjoy. Now it's time to push data");
+                System.out.println("Connection Successful");
             } else {
                 System.out.println("Failed to make connection!");
             }
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println("Connection with database failed");
         }
 
         return db_con_obj;
     }
-    public static void ticketWinner() throws IOException {
+    public static void ticketWinner() {
         ArrayList<Traveller> a=new ArrayList<Traveller>();
         a.add(new Tourist("Merry",21,4,10,15,6));
         a.add(new Tourist("Larry",40,15,4,15,3));
         a.add(new Traveller("Bob",30,2,20,5,20));
         a.add(new Traveller("Adam",25,0,15,5,10));
-        a.add(new Business("Martin",28,"Amsterdam",0,7,10,20));
-        a.add(new Business("Nikos",28,"Athens",0,20,5,29));
+        try {
+            a.add(new Business("Martin",28,"Amsterdam",0,7,10,20));
+            a.add(new Business("Nikos",28,"Athens",0,20,5,29));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        City ticket = new City("New York");
+
+        City ticket = null;
+        try {
+            ticket = new City("New York");
+        } catch (Exception e) {
+        }
         Integer[] similarity = new Integer[5];
 
         similarity[0] = a.get(0).Similarity(ticket);
@@ -53,7 +62,7 @@ public class Main {
 
 
 
-    public static void main(String[] args) throws IOException, SQLException {
+    public static void main(String[] args) {
 
 
        final Gui ui = new Gui();
@@ -71,7 +80,11 @@ public class Main {
 // ############## add content from database #############
         Connection db_con_obj = dbConnection();
         HashMap<String,City> cityHash = new HashMap<String,City>();
-        cityHash.putAll(loadingCitesFromDB(db_con_obj));
+        try {
+            cityHash.putAll(loadingCitesFromDB(db_con_obj));
+        } catch (SQLException | NullPointerException throwable) {
+           System.out.println("there will not be preloaded cities");
+        }
 
 
         PrintStream original = System.out;
@@ -105,12 +118,14 @@ public class Main {
                            //οποτε χωριζω καθενα απο τα s στα δυο και αγνοω το πρωτο
                            String city = fWord[1].trim();
                            if (!cityHash.containsKey(city)) {
-                               cityHash.put(city, new City(city));
+                               City given = new City(city);
+                               given.join();
+                               cityHash.put(city, given);
                            }
                            inputCities.add(cityHash.get(city));
                        }
 
-                   } catch (Exception e) {
+                   } catch (CityNotFoundException| InterruptedException e) {
                        ui.resultNotification("City doesn't exist ");
                        cityExists = false;
                    }
@@ -122,13 +137,21 @@ public class Main {
                            user.setVisit(user.CompareCities(inputCities).toString());
                            ui.resultNotification(user.getVisit() + " from your input fits best");
                        } else if (ui.getChoice().equalsIgnoreCase("b")) {
-                           user = new Tourist(ui.getName(), ui.getAge(), ui.getMuseums(), ui.getCafes(), ui.getRestaurants(), ui.getBars());
+                           user = new Traveller(ui.getName(), ui.getAge(), ui.getMuseums(), ui.getCafes(), ui.getRestaurants(), ui.getBars());
                            user.setVisit(user.CompareCities(inputCities).toString());
                            ui.resultNotification(user.getVisit() + " from your input fits best");
                        } else if (ui.getChoice().equalsIgnoreCase("c")) {
-                           user = new Tourist(ui.getName(), ui.getAge(), ui.getMuseums(), ui.getCafes(), ui.getRestaurants(), ui.getBars());
+                           try {
+                               user = new Business(ui.getName(), ui.getAge(), ui.getCurrCity(), ui.getMuseums(), ui.getCafes(), ui.getRestaurants(), ui.getBars());
+                           } catch (CityNotFoundException e) {
+                               ui.resultNotification("current city doesn't exist ");
+                               ui.setPressed(false);;
+                               break;
+                           }
                            user.setVisit(user.CompareCities(inputCities).toString());
-                           ui.resultNotification(user.getVisit() + " from your input fits best");
+                               ui.resultNotification(user.getVisit() + " fits best based on other users input");
+
+
                        }
 
                        traveller.add(user);
@@ -137,6 +160,15 @@ public class Main {
                    break;
                }
 
+               if(ui.isPressed2()){
+                   System.setOut(original);
+                    Traveller user  = new Traveller(ui.getName(), ui.getAge(), ui.getMuseums(), ui.getCafes(), ui.getRestaurants(), ui.getBars());
+
+
+                   ui.resultNotification(user.CollaborativeFiltering(traveller) + " from your input fits best");
+                   ui.setPressed2(false);
+                   break;
+               }
 
 
            }
@@ -150,7 +182,7 @@ public class Main {
 // ###########  εγγραφη των traveller στο αρχειο traveller.dat
         writeTravellerToFile(traveller);
 
-
+/*
 // #############  κανω τους travellers μοναδικους  ####################
       Set<Traveller> set = new HashSet<Traveller>(traveller);
       traveller.clear();
@@ -164,7 +196,7 @@ public class Main {
           System.out.println(element + " ");
       }
 
-
+*/
 // ########  αποθηκευση των city στην βαση δεδομενων  ###############
       loadingCitiesToDB(cityHash,db_con_obj);
 

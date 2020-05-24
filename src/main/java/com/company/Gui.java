@@ -14,7 +14,16 @@ public class Gui extends JFrame{
     private JList <String> tWeather=new JList<>();
 
 
+
+    private JTextField ctName,ctAge,ctCities,ctMuseums,ctCafes,ctRestaurants,ctBars;
+    private JButton cb;
+    private DefaultListModel<String> ccategory= new DefaultListModel<>();
+    private JList<String> ctCategory=new JList<>();
+    private DefaultListModel<String> ctt10= new DefaultListModel<>();
+    private JList <String> ctWeather=new JList<>();
+
     public boolean pressed = false;
+    public boolean pressed2 = false;
 
 
     private JFrame frame ;
@@ -28,6 +37,7 @@ public class Gui extends JFrame{
     private int bars;
     private String weather;
     private boolean closed = false;
+    private String CurrCity;
 
 
     public boolean isClosed() {
@@ -48,6 +58,24 @@ public class Gui extends JFrame{
 
     public boolean isPressed() {
         return pressed;
+    }
+
+
+
+    public void setPressed2(boolean pressed) {
+        this.pressed2 = pressed;
+    }
+
+    public boolean isPressed2() {
+        return pressed2;
+    }
+
+    public String getCurrCity() {
+        return CurrCity;
+    }
+
+    public void setCurrCity(String currCity) {
+        CurrCity = currCity;
     }
 
     public int getAge() {
@@ -82,7 +110,8 @@ public class Gui extends JFrame{
 
 
 
-    private JPanel mainPanel;
+    JPanel mainPanel;
+    JPanel collaboPanel;
 
     public void mainGUI(){
 
@@ -118,7 +147,7 @@ public class Gui extends JFrame{
 
 
 
-    private void ioInit(){
+    public void ioInit(){
 
 
 
@@ -148,10 +177,13 @@ public class Gui extends JFrame{
         tWeather.setBounds(100,100, 75,75);
 
         b=new JButton("Submit");
+        cb=new JButton("Submit");
 
 
         mainPanel = new JPanel();
-        mainPanel.setBounds(40,30,800,500);
+
+
+        collaboPanel = new JPanel();
 
         JPanel resultPanel = new JPanel();
         resultPanel.setBounds(40,550,800,200);
@@ -199,11 +231,49 @@ public class Gui extends JFrame{
         rain.addElement(false);
         tWeather.setBounds(100,100, 75,75);
 
+
         b=new JButton("Submit");
+
+
+
+
+
+
+
+
+        ctCategory.setBounds(100,100, 75,75);
+        JLabel clName=new JLabel("<html><h3>Give name:</h3></html>");
+
+        ctName=new JTextField(10);
+        JLabel clAge=new JLabel("<html><h3>Give age:</h3></html>");
+
+        ctAge=new JTextField(2);
+
+        JLabel clTips=new JLabel("<html><h3>for the next fields give a number greater than zero if you want it in your destination:</h3></html>");
+        JLabel clMuseums=new JLabel("<html><h3>Do you want museums?</h3></html>");
+        ctMuseums=new JTextField(2);
+
+        JLabel clCafes=new JLabel("<html><h3>Do you want Cafes?</h3></html>");
+        ctCafes=new JTextField(2);
+
+        JLabel clRestaurants=new JLabel("<html><h3>Do you want restaurants?</h3></html>");
+        ctRestaurants=new JTextField(2);
+
+        JLabel clBars=new JLabel("<html><h3>Do you want bars?</h3></html>");
+        ctBars=new JTextField(2);
+
+
+
+
+        cb=new JButton("Submit");
+
+
+
+
+
 
         mainPanel.add(lCategory);
         mainPanel.add(tCategory);
-        mainPanel.add(new JLabel("<html><br><hr></html"));
         mainPanel.add(lName);
         mainPanel.add(tName);
         mainPanel.add(lAge);
@@ -221,12 +291,38 @@ public class Gui extends JFrame{
         mainPanel.add(tBars);
         mainPanel.add(lWeather);
         mainPanel.add(tWeather);
+
         mainPanel.add(b);
         mainPanel.setLayout(new FlowLayout());
 
+
+
+
+        collaboPanel.add(clName);
+        collaboPanel.add(ctName);
+        collaboPanel.add(clAge);
+        collaboPanel.add(ctAge);
+        collaboPanel.add(clTips);
+        collaboPanel.add(clMuseums);
+        collaboPanel.add(ctMuseums);
+        collaboPanel.add(clCafes);
+        collaboPanel.add(ctCafes);
+        collaboPanel.add(clRestaurants);
+        collaboPanel.add(ctRestaurants);
+        collaboPanel.add(clBars);
+        collaboPanel.add(ctBars);
+        collaboPanel.add(cb);
+        collaboPanel.setLayout(new FlowLayout());
+
+
         resultPanel.add(resultNotification);
+
+        JTabbedPane tp=new JTabbedPane();
+        tp.setBounds(40,30,800,500);
         mainPanel.setLayout(new FlowLayout());
-        frame.add(mainPanel);
+        tp.add("Collaborative filtering",collaboPanel);
+        tp.add("Content based filtering",mainPanel);
+        frame.add(tp);
         frame.add(resultPanel);
 
 
@@ -247,17 +343,53 @@ public class Gui extends JFrame{
                     bars        = Integer.parseInt(tBars.getText());
                     weather     = tWeather.getSelectedValue();
 
+
+                    if (choice == "c") {
+                        CurrCity = JOptionPane.showInputDialog(frame,
+                                "What is your current city?", null);
+                    }
+
                     if(age <= 18 || age > 90){
                         resultNotification.setText("<html><h1>Please give valid age</h1></html>");
                     }else {
                         pressed = true;
                     }
 
+
             }catch(NumberFormatException e1){
                     resultNotification.setText("<html><h1>Please give a number</h1></html>");
                 }
             }
         });
+
+
+
+
+        cb.addActionListener(new ActionListener(){
+
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+                    name        = ctName.getText();
+                    age         = Integer.parseInt(ctAge.getText());
+                    museums     = Integer.parseInt(ctMuseums.getText());
+                    cafes       = Integer.parseInt(ctCafes.getText());
+                    restaurants = Integer.parseInt(ctRestaurants.getText());
+                    bars        = Integer.parseInt(ctBars.getText());
+
+                    if(age <= 18 || age > 90){
+                        resultNotification.setText("<html><h1>Please give valid age</h1></html>");
+                    }else {
+                        pressed2 = true;
+                    }
+
+                }catch(NumberFormatException e1){
+                    resultNotification.setText("<html><h1>Please give a number</h1></html>");
+                }
+            }
+        });
+
+
 
     }
 

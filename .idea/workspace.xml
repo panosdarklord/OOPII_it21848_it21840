@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6962a6-84a4-446d-9e9d-0287976cb871" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOPII_it21848_it21840.iml" beforeDir="false" afterPath="$PROJECT_DIR$/OOPII_it21848_it21840.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Business.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Business.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Traveller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Traveller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Business.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Business.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/City.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Gui$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Gui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Gui$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Tourist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Tourist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/Traveller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/Traveller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/traveler.dat" beforeDir="false" afterPath="$PROJECT_DIR$/traveler.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +47,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -97,22 +112,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="393" y="266" width="1114" height="484" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1586451974588" />
-    <state width="1872" height="320" key="GridCell.Tab.0.bottom" timestamp="1589627076045">
+    <state width="1872" height="247" key="GridCell.Tab.0.bottom" timestamp="1590328149813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1872" height="320" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1589627076045" />
-    <state width="1872" height="320" key="GridCell.Tab.0.center" timestamp="1589627076044">
+    <state width="1872" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590328149813" />
+    <state width="1872" height="247" key="GridCell.Tab.0.center" timestamp="1590328149812">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1872" height="320" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1589627076044" />
-    <state width="1872" height="320" key="GridCell.Tab.0.left" timestamp="1589627076044">
+    <state width="1872" height="247" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590328149812" />
+    <state width="1872" height="247" key="GridCell.Tab.0.left" timestamp="1590328149812">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1872" height="320" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1589627076044" />
-    <state width="1872" height="320" key="GridCell.Tab.0.right" timestamp="1589627076045">
+    <state width="1872" height="247" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590328149812" />
+    <state width="1872" height="247" key="GridCell.Tab.0.right" timestamp="1590328149813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1872" height="320" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1589627076045" />
+    <state width="1872" height="247" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590328149813" />
     <state width="1872" height="353" key="GridCell.Tab.1.bottom" timestamp="1586797491187">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -129,10 +144,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1872" height="353" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1586797491187" />
-    <state x="443" y="116" width="1024" height="815" key="SettingsEditor" timestamp="1586451979760">
+    <state x="445" y="144" width="1311" height="815" key="SettingsEditor" timestamp="1590327989938">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="443" y="116" width="1024" height="815" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1586451979760" />
+    <state x="445" y="144" width="1311" height="815" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590327989938" />
     <state x="534" y="352" key="com.intellij.ide.util.TipDialog" timestamp="1586254451204">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

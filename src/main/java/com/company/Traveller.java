@@ -2,6 +2,11 @@ package com.company;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 public class Traveller implements java.io.Serializable, Comparable<Traveller> {
     private   String name;
     private   int    age;
@@ -10,6 +15,8 @@ public class Traveller implements java.io.Serializable, Comparable<Traveller> {
     private   String visit;
     static    int    counter;
     private   int    museums, cafes, restaurants, bars;
+    private int[] criteria = new int[4];
+
 
     public Traveller(String name, int age, int museums, int cafes, int restaurants, int bars) {
         this.name        = name;
@@ -18,6 +25,11 @@ public class Traveller implements java.io.Serializable, Comparable<Traveller> {
         this.cafes       = cafes;
         this.restaurants = restaurants;
         this.bars        = bars;
+        this.criteria[0] = museums;
+        this.criteria[1] = cafes;
+        this.criteria[2] = restaurants;
+        this.criteria[3] = bars;
+
         counter++;
     }
 
@@ -39,6 +51,14 @@ public class Traveller implements java.io.Serializable, Comparable<Traveller> {
 
     public String getVisit() {
         return visit;
+    }
+
+    public int[] getCriteria() {
+        return criteria;
+    }
+
+    public void setCriteria(int[] criteria) {
+        this.criteria = criteria;
     }
 
     public void setVisit(String visit) {
@@ -191,4 +211,32 @@ public static void writeTravellerToFile(LinkedList<Traveller> traveller){
     public int compareTo(Traveller o) {
         return this.age - o.age;
     }
+
+    public String CollaborativeFiltering(LinkedList<Traveller> traveller){
+        List<Traveller> filtered = traveller.stream().filter(distinctByKey(p -> p.getVisit())).collect(Collectors.toList());   //χωρης την filter αν υπαρχουν ιδια Visit κανει exception
+        Map <String,Integer> cityToRank = filtered.stream().collect(Collectors.toMap(i->i.getVisit(), i->innerDot(i.getCriteria(),this.criteria)));
+
+
+        Optional<RecommendedCity> recommendedCity=
+                traveller.stream().map(i-> new RecommendedCity(i.getVisit(),innerDot(i.getCriteria(),this.criteria))).max(Comparator.comparingInt(RecommendedCity::getRank));
+
+
+        return recommendedCity.get().getCity();
+    }
+    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor)  //Το βρηκα απο το internet εχασα το link μπωρουσα και με αλλο τροπο αλλα
+                                                                                            // προτίμησα να χρησιμοποιήσω streams
+    {
+        Map<Object, Boolean> map = new ConcurrentHashMap<>();
+        return t -> map.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+    }
+
+    private static int innerDot(int[] currentTraveller, int[] candidateTraveller)     {
+        int sum=0;
+        for (int i=0; i<currentTraveller.length;i++)
+             sum+=currentTraveller[i]*candidateTraveller[i];
+        return sum;
+
+    }
 }
+
+
