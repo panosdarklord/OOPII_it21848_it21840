@@ -1,2 +1,2 @@
 # OpenWiki
-Java exercise with OpenWiki library( university project).
+Java exercise with OpenWiki library (university project).
